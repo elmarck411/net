@@ -1,8 +1,23 @@
 ﻿//entrada: cadena en formato YYYY-MM-DDTHH:mm:ss, de SQL Server
 //salida: cadena en formato dd/mm/yyyy, para la vista
 var fechaSQLMx = function (cadenaEntrada) {
-    var arrayDate = cadenaEntrada.replace(/T.+/, '').split('-');
-    return arrayDate[2] + '/' +  arrayDate[1] + '/' +arrayDate[0];
+    var d = new Date(cadenaEntrada);
+    var dia = obtenDia(d);
+    var mes = obtenMes(d);
+    return dia + '/' + mes + '/' + d.getFullYear();
+}
+
+
+//obtener el dia y agregar 0 a los dias menores a 10 ya que regresa un solo digito
+function obtenDia(date) {
+    var dia = date.getDate();
+    return dia < 10 ? '0' + dia : '' + dia;
+}
+
+//obtener el mes y agregar 0 a los meses menores a 10 ya que regresa un solo digito
+function obtenMes(date) {
+    var mes = date.getMonth() + 1;
+    return mes < 10 ? '0' + mes : '' + mes;
 }
 
 //entrada: cadena en formato dd/mm/yyyy, desde la vista
