@@ -18,5 +18,11 @@ namespace todoList.Models
         }
 
         public DbSet<TodoItem> TodoItems { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            Database.SetInitializer(
+                new MigrateDatabaseToLatestVersion<todoListContext, Migrations.Configuration>());
+        }
     }
 }
