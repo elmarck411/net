@@ -1,0 +1,9 @@
+﻿<form name="forma" class="form-horizontal" role="form" >
+    <cm-create nombre ="'todoAdd'" labeltext="'Nombre del Todo'" modelo="item.Todo" cad_val="" forma="forma"></cm-create>
+    <cm-create nombre ="'priorityAdd'" labeltext="'Prioridad'" modelo="item.Priority" cad_val="" forma="forma"></cm-create>
+    <cm-create nombre ="'dueAdd'" labeltext="'Fecha del Todo'" modelo="item.DueDate" cad_val="" forma="forma"></cm-create>
+    <div class="form-actions">
+         <button class="btn btn-primary"  ng-click="save(forma.$invalid)" > Agregar</button>
+        <a href="#/" class="btn">Cancel</a>
+    </div>
+</form>

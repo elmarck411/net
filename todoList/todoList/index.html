@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html ng-app="todoApp" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+         <script src="Scripts/jquery-1.7.1.js"></script>
+        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+        <script src="Scripts/angular.js"></script>
+        <script src="Scripts/angular-route.js"></script>
+        <script src="Scripts/angular-resource.js"></script>
+
+         <script src="Scripts/app.js"></script>
+         <script src="Scripts/utils.js"></script>
+        
+        <!--Controladores -->
+        <script src="Scripts/Controllers/listController.js"></script>
+        <script src="Scripts/Controllers/detailsController.js"></script>
+        <script src="Scripts/Controllers/createController.js"></script>
+        <script src="Scripts/Controllers/editController.js"></script>
+        
+        <!--Directivas juntar las de elementos en comun, como los inputs -->
+        <script src="Scripts/Directives/listDirective.js"></script>
+        <script src="Scripts/Directives/inputText.js"></script>
+        <script src="Scripts/Directives/inputNum.js"></script>
+        <script src="Scripts/Directives/inputDate.js"></script>
+        <script src="Scripts/Directives/jqueryDatePicker.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="Content/bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="Content/style.css" />
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+
+        <!--<link rel="stylesheet" href="/resources/demos/style.css" /> -->
+        <title>Amazing Todo</title>
+    </head>
+    <body>
+        <div class="container">
+            <div ng-view></div>
+        </div>
+    </body>
+</html>
+
+

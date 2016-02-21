@@ -1,0 +1,10 @@
+﻿<form name="forma" class="form-horizontal" role="form" >
+    <input-text nombre ="'todoAdd'" labeltext="'Nombre del Todo'" modelo="item.Todo" forma="forma"></input-text>
+    <input-num nombre ="'priorityAdd'" labeltext="'Prioridad'" modelo="item.Priority" forma="forma"></input-num>
+    <input-date nombre ="'dueAdd'" labeltext="'Fecha del Todo, en formato aaaa-mm-dd'"  modelo="item.DueDate" forma="forma"></input-date>
+    
+    <div class="form-actions">
+         <button class="btn btn-primary"  ng-click="save(forma.$invalid)" >{{ btnOK }}</button>
+        <a href="#/" class="btn">Cancelar</a>
+    </div>
+</form>

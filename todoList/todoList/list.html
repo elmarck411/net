@@ -1,0 +1,29 @@
+﻿<form class="form-search">
+    <div class="input-append">
+        <input type="text" ng-model="query" class="input-medium search-query" placeholder="Search">
+        <button ng-click="reset();" type="submit" class="btn">Buscar<i class="icon-search"></i></button>
+        <button ng-click="searchJS();"  class="btn">Buscar por Id, AngularJS </button>
+    </div>
+    <button ng-click="query=''; filter()" ng-disabled="!query" type="submit" class="btn">Reset</button>
+</form>
+
+<table class="table table-striped table-condensed table-hover">
+    <thead>
+        <ej-sort critdir="'TodoItemId'" desc="desc()" critsel ="critsel()" ordena="sort_by('TodoItemId')" reset="reset()"></ej-sort>
+        <ej-sort critdir="'Todo'" desc="desc()" critsel ="critsel()" ordena="sort_by('Todo')" reset="reset()"></ej-sort>
+        <ej-sort critdir="'Priority'" desc="desc()" critsel ="critsel()" ordena="sort_by('Priority')" reset="reset()"></ej-sort>
+        <ej-sort critdir="'DueDate'" desc="desc()" critsel ="critsel()" ordena="sort_by('DueDate')" reset="reset()"></ej-sort>
+        <th><a href="#/new"> <i class="icon-plus-sign"> Nuevo Item</i></a></th>
+    </thead>
+    <tbody>
+        <tr ng-repeat="item in items  | filter:filtroJS | orderBy : sort_criteria : sort_desc " id="item_{{item.TodoItemId}}" >
+             <td>{{item.TodoItemId}}</td>
+            <td>{{item.Todo}}</td>
+            <td>{{item.Priority}}</td>
+            <td>{{item.DueDate}}</td>
+            <td><a href="#/edit/{{item.TodoItemId}}"><i class="icon-edit">Editar</i></a> <a ng-click="delete()"><i class="icon-remove">Eliminar</i></a> </td>
+        </tr>
+    </tbody>
+</table>
+
+<a href="" ng-click ="offset = offset + limit; search()" ng-show="show_more()">Mostrar mas...</a>
